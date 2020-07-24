@@ -1,0 +1,44 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: dogwalks
+      POSTGRES_PASSWORD: dogwalks
+      PGDATA: /data/postgres
+    volumes:
+      - pg-dogwalks:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - appnet
+    restart: unless-stopped
+
+  php-fpm:
+    build: ./Docker/php-fpm
+    volumes:
+      - .:/usr/share/nginx/html
+    networks:
+      - appnet
+    links:
+      - db
+    privileged: true
+
+  nginx:
+    build: ./Docker/nginx
+    ports:
+      - "80:80"
+    volumes:
+      - .:/usr/share/nginx/html
+    networks:
+      appnet:
+        aliases:
+          - bidhero.app
+
+networks:
+  appnet:
+    driver: bridge
+
+volumes:
+  pg-dogwalks:
