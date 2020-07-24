@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity(repositoryClass=PlacePhotosRepository::class)
- * @ORM\Table(name="places_photos", schema="dog_walks")
+ * @ORM\Table(name="places_photos")
  */
 class PlacePhoto
 {

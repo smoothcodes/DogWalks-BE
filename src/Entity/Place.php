@@ -13,7 +13,6 @@ use JMS\Serializer\Annotation as JMS;
  * @ORM\Entity(repositoryClass=PlaceRepository::class)
  * @ORM\Table(
  *     name="places",
- *     schema="dog_walks",
  *     indexes={@Index(name="coords_search_idx", columns={"longitude", "latitude"})}
  * )
  * @JMS\ExclusionPolicy("all")

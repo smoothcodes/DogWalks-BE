@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation as JMS;
 
 /**
  * @ORM\Entity(repositoryClass=PlaceTypeRepository::class)
- * @ORM\Table(name="place_types", schema="dog_walks")
+ * @ORM\Table(name="place_types")
  * @JMS\ExclusionPolicy("all")
  */
 class PlaceType

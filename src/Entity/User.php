@@ -13,7 +13,7 @@ use JMS\Serializer\Annotation as JMS;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ORM\Table(name="`users`", schema="core")
+ * @ORM\Table(name="`users`")
  * @JMS\ExclusionPolicy("all")
  */
 class User implements UserInterface
