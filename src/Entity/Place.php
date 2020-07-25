@@ -65,7 +65,7 @@ class Place
 
     /**
      * @ORM\ManyToMany(targetEntity=PlaceType::class, cascade={"persist"})
-     * @ORM\JoinTable(name="dog_walks.place_place_type")
+     * @ORM\JoinTable(name="place_place_type")
      * @JMS\Expose()
      * @JMS\Groups({"single"})
      */
